@@ -241,6 +241,16 @@ th {
   .navbar {
     display: none;
   }
+    .header {
+        color: #36A0FF;
+        font-size: 27px;
+        padding: 10px;
+    }
+
+    .bigicon {
+        font-size: 35px;
+        color: #36A0FF;
+    }
   .btn > .caret,
   .dropup > .btn > .caret {
     border-top-color: #000 !important;

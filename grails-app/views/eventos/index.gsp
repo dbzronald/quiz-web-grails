@@ -45,9 +45,9 @@
 
                 <!-- nav -->
                 <ul class="nav-menu nav navbar-nav">
-                    <li class="cat-1"><a href="#">Eventos</a></li>
+                    <li class="cat-1"><a href="${createLink(controller:'eventos', action:'index')}">Eventos</a></li>
                     <li class="cat-2"><a href="${createLink(controller:'usuario', action:'index')}">Usuarios</a></li>
-                    <li class="cat-3"><a href="#">Crear Evento</a></li>
+                    <li class="cat-3"><a href="${createLink(controller:'eventos', action:'crear')}">Crear Evento</a></li>
                     <li class="cat-4"><a href="${createLink(controller:'usuario', action:'crear')}">Crear Usuario</a></li>
             </ul>
                 <!-- /nav -->
@@ -105,51 +105,25 @@
                     <h2>Eventos</h2>
                 </div>
             </div>
-
-            <!-- post -->
-            <div class="col-md-4">
-                <div class="post">
-                    <a class="post-img" href="blog-post.html"><img src="./img/post-4.jpg" alt=""></a>
-                    <div class="post-body">
-                        <div class="post-meta">
-                            <a class="post-category cat-2" href="category.html">JavaScript</a>
-                            <span class="post-date">March 27, 2018</span>
+            <g:each in="${eventos}">
+                <!-- post -->
+                <div class="col-md-4">
+                    <div class="post">
+                        <a class="post-img" href="blog-post.html"><img src="./img/post-4.jpg" alt=""></a>
+                        <div class="post-body">
+                            <div class="post-meta">
+                                <a class="post-category cat-2" href="category.html">${it.edad}+</a>
+                                <span class="post-date">Inicia:${it.fecha_ini} Termina:${it.fecha_fin}</span>
+                            </div>
+                            <h3 class="post-title"><a href="blog-post.html">${it.nombre}</a></h3>
+                            <p>${it.descripcion}</p>
                         </div>
-                        <h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks</a></h3>
                     </div>
                 </div>
-            </div>
 
-            <!-- /post -->
+                <!-- /post -->
+            </g:each>
 
-            <!-- post -->
-            <div class="col-md-4">
-                <div class="post">
-                    <a class="post-img" href="blog-post.html"><img src="./img/post-5.jpg" alt=""></a>
-                    <div class="post-body">
-                        <div class="post-meta">
-                            <a class="post-category cat-3" href="category.html">Jquery</a>
-                            <span class="post-date">March 27, 2018</span>
-                        </div>
-                        <h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
-                    </div>
-                </div>
-            </div>
-            <!-- /post -->
-
-            <!-- post -->
-            <div class="col-md-4">
-                <div class="post">
-                    <a class="post-img" href="blog-post.html"><img src="./img/post-3.jpg" alt=""></a>
-                    <div class="post-body">
-                        <div class="post-meta">
-                            <a class="post-category cat-1" href="category.html">Web Design</a>
-                            <span class="post-date">March 27, 2018</span>
-                        </div>
-                        <h3 class="post-title"><a href="blog-post.html">Pagedraw UI Builder Turns Your Website Design Mockup Into Code Automatically</a></h3>
-                    </div>
-                </div>
-            </div>
             <!-- /post -->
         </div>
         <!-- /row -->

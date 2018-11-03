@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>Eventos</title>
+    <title>Crear Evento</title>
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700%7CNunito:300,600" rel="stylesheet">
@@ -26,8 +26,8 @@
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
-
 </head>
+
 <body>
 
 <!-- Header -->
@@ -93,30 +93,49 @@
     <!-- /Nav -->
 </header>
 <!-- /Header -->
+<div class="container">
+    <div class="row">
+        <div class="well well-sm">
 
-<table>
-    <thead>
-    <tr>
-        <th>Cedula</th>
-        <th>Nombres</th>
-        <th>Apellidos</th>
-        <th>Edad</th>
-        <th>Email</th>
-    </tr>
-    </thead>
-    <tbody>
+            <g:form controller="eventos" action="save" class="form-horizontal">
+                <fieldset>
 
-    <g:each in="${Usuarios}">
-        <tr>
-            <td>${it.cedula}</td>
-            <td>${it.nombre}</td>
-            <td>${it.apellidos}</td>
-            <td>${it.edad}</td>
-            <td>${it.mail}</td>
-        </tr>
-    </g:each>
+                    <legend class="text-center header">Crear Evento</legend>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="nombre">Nombre: </label>
+                                <g:textField name="nombre" type="text" class="form-control col-xs-4"/><br/>
+                            </div>
 
-    </tbody>
-</table>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion: </label>
+                                <g:textArea name="descripcion" class="form-control col-xs-4"/><br/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="edad">Edad Minima: </label>
+                                <g:textField name="edad" class="form-control col-xs-4" type="number"/><br/>
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha_ini">Fecha de Inicio: </label>
+                                <g:textField name="fecha_ini" type="text" class="form-control col-xs-4"/><br/>
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha_fin">Fecha de Final: </label>
+                                <g:textField name="fecha_fin" type="text" class="form-control col-xs-4"/><br/>
+                            </div>
+                        </div>
+
+
+                    <g:actionSubmit value="Save"/>
+
+                </fieldset>
+            </g:form>
+
+        </div>
+    </div>
+
+</div>
+
 </body>
 </html>

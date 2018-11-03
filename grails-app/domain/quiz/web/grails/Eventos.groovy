@@ -1,16 +1,23 @@
 package quiz.web.grails
 
-class Eventos implements Serializable {
+import grails.databinding.BindingFormat
 
-    private static final long serialVersionUID = 1;
+class Eventos {
 
-    String nombre;
-    String descripcion;
-    String fecha_ini;
-    String fecha_fin;
-    String edad;
+
+    String nombre
+    String descripcion
+    float tiempo_ini
+    String fecha_ini
+
+    String fecha_fin
+    int edad
+    List<Usuario> registrados
 
     static constraints = {
-        edad min: 18
+        registrados nullable: true, blank: true
     }
+
+
 }
+
