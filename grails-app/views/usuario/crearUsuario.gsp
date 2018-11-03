@@ -6,7 +6,7 @@
 </head>
 <body>
 <g:form controller="usuario" action="save">
-
+<div class="form-group">
     <div class="form-group">
         <label for="nombre">Nombre: </label>
         <g:textField name="nombre" type="text" class="form-control"/><br/>
@@ -32,6 +32,8 @@
     </div>
 
     <g:actionSubmit value="Save"/>
+</div>
+
 </g:form>
 </body>
 </html>

@@ -1,25 +1,23 @@
 package quiz.web.grails
 
-import grails.compiler.GrailsCompileStatic
-import groovy.transform.EqualsAndHashCode
-import groovy.transform.ToString
 
-@EqualsAndHashCode(includes='mail')
-@ToString(includes='mail', includeNames=true, includePackage=false)
-class Usuario implements Serializable {
+class Usuario {
 
-    private static final long serialVersionUID = 1;
-
-    String nombre;
-    String pass;
-    String apellidos;
-    String cedula;
-    String mail;
-    String fecha_Nacimiento;
+    int id_usuario
+    String nombre
+    String pass
+    String apellidos
+    String cedula
+    String mail
+    String fecha_Nacimiento
+    boolean admin
 
 
     static constraints = {
         pass nullable: false, blank: false, password: true
         mail nullable: false, blank: false, unique: true
+    }
+    static mapping = {
+        id generator:'assigned', name:'id_usuario'
     }
 }
